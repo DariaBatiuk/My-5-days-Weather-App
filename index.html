@@ -1,99 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5 days weather App</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 days weather App</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
     <header>
       <h1>Weather Dashboard</h1>
-
     </header>
 
     <main>
       <section id="search-container">
         <aside>
           <div id="selector" class="selector-hidden"></div>
+          <div class="search-header">Search for a city:</div>
           <form id="search">
-            <input type="text">
+            <input type="text" placeholder="San Diego" />
             <button type="submit" id="search-btn">Search</button>
           </form>
-           <button id="clear-history">Clear search history</button>
+          <hr />
+          <button id="search-city">Atlanta</button>
+          <button id="search-city">Denver</button>
+          <button id="search-city">Seattle</button>
+          <button id="search-city">Seattle</button>
+          <button id="search-city">San Francisco</button>
+          <button id="search-city">Orlando</button>
+          <button id="search-city">New York</button>
+          <button id="search-city">Chicago</button>
+          <button id="search-city">Austin</button>
         </aside>
-        <div id="previous-searches">  
-
-        </div>
+        <div id="previous-searches"></div>
       </section>
       <section id="weather-display{">
         <div id="main-card">
-          <div id="todays-day"><span id="city-name">Atlanta</span> - <span id="todays-date"></span></div>
-          <hr>
-          <div id="todays-info">
-            <div><img src="" id="today-img"></div>
-            <span id="today-max"></span>
-            <span id="today-min"></span>
-            <span id="today-wind"></span>
-            <span id="today-humidity"></span>
-            <span id="today-uv" class="severe-uv">UV: High</span>
-          </div>
-        </div>
-        <div class="five-day">
-          5 day forecast
-        </div>
-        <div id="container-daily-cards">
-          <div class="daily-card" data-fiveday="0">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
-          </div>        
-          <div class="daily-card" data-fiveday="1">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
-          </div>        
-          <div class="daily-card" data-fiveday="2">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
-          </div>        
-          <div class="daily-card" data-fiveday="3">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
-          </div>        
-          <div class="daily-card" data-fiveday="4">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
+          <div id="todays-day">
+            <span id="city-name">Atlanta</span>
+            <span id="todays-date">(2022-12-4)</span>
+            <div><img src="" id="today-img" />IMG</div>
           </div>
 
+          <hr />
+          <div id="todays-info">
+            <span id="today-max">Temp</span>
+            <span id="today-wind">Wind</span>
+            <span id="today-humidity">Humid</span>
+          </div>
+        </div>
+        <div class="five-day">5-Day Forecast:</div>
+        <div id="container-daily-cards">
+          <div class="daily-card" data-fiveday="0">
+            <p class="day">2022-12-04</p>
+            <hr />
+            <img src="" class="weather-img" />
+            <p class="max">1</p>
+            <p class="wind">2</p>
+            <p class="humidity">3</p>
+          </div>
+          <div class="daily-card" data-fiveday="1">
+            <p class="day"></p>
+            <hr />
+            <img src="" class="weather-img" />
+            <p class="max"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>
+          <div class="daily-card" data-fiveday="2">
+            <p class="day"></p>
+            <hr />
+            <img src="" class="weather-img" />
+            <p class="max"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>
+          <div class="daily-card" data-fiveday="3">
+            <p class="day"></p>
+            <hr />
+            <img src="" class="weather-img" />
+            <p class="max"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>
+          <div class="daily-card" data-fiveday="4">
+            <p class="day"></p>
+            <hr />
+            <img src="" class="weather-img" />
+            <p class="max"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>
         </div>
       </section>
-      
     </main>
- 
-</body>
+  </body>
 </html>
