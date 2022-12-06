@@ -16,3 +16,5 @@ THEN I am again presented with current and future conditions for that city
 
 Link to the deployed project:
 https://dariabatiuk.github.io/My-5-days-Weather-App/
+
+API key 1151aaa47b533c1e5a2b281eebc6f2a6
