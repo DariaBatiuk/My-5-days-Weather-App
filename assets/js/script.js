@@ -9,10 +9,8 @@
 
 let cityName = document.querySelector('#cityName');
 let searchBTn = document.querySelector('#search-btn');
+let newCity = document.querySelector('#city-name');
 
-console.log(cityNameValue);
-console.log(cityObj);
-console.log(saveCity);
 
 function saveCityName (cityNameValue) {
     let cityObj = {
@@ -25,6 +23,25 @@ function saveCityName (cityNameValue) {
     console.log(saveCity);
 
     window.localStorage.setItem("location", JSON.stringify(saveCity));
+
+    newCity.innerHTML = "";
+    let divCityName = document.createElement("div");
+    divCityName.textContent = saveCity.name.value;
+    newCity.appendChild(divCityName);
+
+    // function addCityName (saveCity) {
+    //     let divCityName = document.createElement("li");
+    //     divCityName.textContent = saveCity.name;
+    //     newCity.appendChild(divCityName);
+    // };
+    // addCityName()
+
+
+    // saveCity.forEach(name => {
+    //     let divCityName = document.createElement("li");
+    //     divCityName.textContent = name.name;
+    //     newCity.appendChild(divCityName)
+    // });
 }
 
 //click on search button
