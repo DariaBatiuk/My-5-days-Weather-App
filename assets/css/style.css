@@ -131,7 +131,7 @@ main {
 }
 
 #search-container input:focus-visible {
-  background-color: var(--purple);
+  background-color: rgb(225, 205, 205);
 }
 
 /* #search-container {
