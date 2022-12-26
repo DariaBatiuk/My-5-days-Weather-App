@@ -24,10 +24,10 @@ function saveCityName (cityNameValue) {
 
     window.localStorage.setItem("location", JSON.stringify(saveCity));
 
-    newCity.innerHTML = "";
-    let divCityName = document.createElement("div");
-    divCityName.textContent = saveCity.name.value;
-    newCity.appendChild(divCityName);
+    //newCity.innerHTML = saveCityName.name.value;
+    // let divCityName = document.createElement("div");
+    // divCityName.textContent = saveCity.name.value;
+    // newCity.appendChild(divCityName);
 
     // function addCityName (saveCity) {
     //     let divCityName = document.createElement("li");
@@ -36,12 +36,24 @@ function saveCityName (cityNameValue) {
     // };
     // addCityName()
 
-
     // saveCity.forEach(name => {
     //     let divCityName = document.createElement("li");
     //     divCityName.textContent = name.name;
     //     newCity.appendChild(divCityName)
     // });
+
+		saveCity.forEach(name => {
+			// newCity.innerHTML = "";
+			// let divCityName = document.createElement("div");
+			// divCityName.textContent = name.name;
+			// newCity.appendChild(divCityName)
+
+			newCity.innerHTML = name.name;
+
+			// let divCityName = document.createElement("div");
+			// divCityName.textContent = name.name;
+			// newCity.appendChild(divCityName)
+	});
 }
 
 //click on search button
