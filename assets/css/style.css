@@ -34,7 +34,7 @@ h1 {
   box-shadow: 5px 5px 5px var(--shadow-border);
   border: 1px solid var(--shadow-border);
   padding: 10px;
-  background-color: rgba(3, 24, 77, 0.799);
+  background-color: rgba(54, 67, 99, 0.799);
   color: #fff;
 }
 hr {
@@ -61,7 +61,7 @@ button {
   color: #fff;
 }
 
-#search-city {
+#search_city button{
   width: 100%;
   margin-bottom: 5px;
   background-color: rgba(196, 192, 192, 0.945);
@@ -98,7 +98,7 @@ button {
 #main-card {
   margin-bottom: 10px;
   width: 87%;
-  height: 40%;
+  height:260px;
   margin-left: auto;
   margin-right: auto;
 }
