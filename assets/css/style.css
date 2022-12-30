@@ -68,6 +68,7 @@ button {
   box-shadow: 5px 5px 5px var(--shadow-border);
   border: 1px solid var(--shadow-border);
   font-weight: 600;
+	text-transform: capitalize;
 }
 #main-card {
   box-shadow: 5px 5px 5px var(--shadow-border);
@@ -226,6 +227,7 @@ aside {
 #city-name,
 #todays-date {
   box-shadow: none;
+	text-transform: capitalize;
 }
 
 @media screen and (max-width: 960px) {
