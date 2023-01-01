@@ -3,63 +3,74 @@ let cityName = document.querySelector('#cityName');
 let searchBTn = document.querySelector('#search-btn');
 let newCity = document.querySelector('#city-name');
 let searchCity = document.querySelector('#search_city');
-//let day = document.querySelector('#day');
+let city_btn = document.querySelector('#city_btn');
+let apiKey = '1151aaa47b533c1e5a2b281eebc6f2a6';
 
-// fetch(`http://api.openweathermap.org/data/2.5/forecast?q=' + cityName.value + '&cnt=5&appid=1151aaa47b533c1e5a2b281eebc6f2a6`)
-// .then(function (resp) {return resp.json() }) //convert data to json
-// .then(function(data) {
-//     console.log(data);
-// })
-// .catch(function () {
-//     //catch any errors
-// });
 
 function saveCityName (cityNameValue) {
+	let alreadyExist = false;
     let cityObj = {
         name: cityNameValue
     }
     console.log(cityObj);
-
     let saveCity = JSON.parse(window.localStorage.getItem ("location") || "[]");
-		
-    saveCity.push(cityObj);		
-		// saveCity.slice(0, 9);
-		saveCity.splice(10);
-    console.log(saveCity);
 
+		//check if the city is already in the list
+		for (let i=0; i< saveCity.length; i++){
+			if (cityNameValue == saveCity[i].name){
+				alreadyExist = true;
+			}
+		} 
+		if (!alreadyExist){
+			saveCity.push(cityObj);	
+			saveCity.splice(10);
+		}
+	
+    console.log(saveCity);
     window.localStorage.setItem("location", JSON.stringify(saveCity));
 
 		searchCity.textContent = "";
 		saveCity.forEach(name => {
-			newCity.innerHTML = name.name;	
 			let btnCityName = document.createElement("button");
+			btnCityName. setAttribute('id','city_btn')
 			btnCityName.textContent = name.name;
-			searchCity.appendChild(btnCityName);					
+			searchCity.appendChild(btnCityName);	
+			newCity.innerHTML = cityNameValue;
+			
+			//click on buttons with city names
+			btnCityName.addEventListener("click", () => {
+				let cityNameValue = btnCityName.innerText;
+				console.log(btnCityName.innerText);
+				console.log(cityNameValue);
+				if (cityNameValue) {
+					getDataByCityName(cityNameValue);
+					getCurrentData (cityNameValue);
+					cityName.value = '';
+					newCity.innerHTML = cityNameValue;
+				} else {
+					alert('Please enter a city name');
+				}
+			});
 	});		
 }
 
 //click on search button
 searchBTn.addEventListener("click", () => {
-    let cityNameValue = cityName.value.trim();
+	let cityNameValue = cityName.value.trim().toLowerCase();
     console.log(cityNameValue);
-    saveCityName(cityNameValue);
 		
-
 		if (cityNameValue) {
 			getDataByCityName(cityNameValue);
 			getCurrentData (cityNameValue);
-	
-			//repoContainerEl.textContent = '';
+			saveCityName(cityNameValue);
 			cityName.value = '';
 		} else {
 			alert('Please enter a city name');
 		}
 })
 
-//let apiKey = api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=1151aaa47b533c1e5a2b281eebc6f2a6
-
 var getDataByCityName = function (name) {
-  var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + name + '&appid=1151aaa47b533c1e5a2b281eebc6f2a6&exclude=list';
+  var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + name + '&appid=1151aaa47b533c1e5a2b281eebc6f2a6';
 
   fetch(apiUrl)
 		.then(function (response){
@@ -72,8 +83,7 @@ var getDataByCityName = function (name) {
 						document.querySelector('#max' + (i+1)).innerHTML = 'Temp: ' + Number(data.list[i*8].main.temp - 273.15).toFixed(1) + ' °C'
 						document.querySelector('#wind' + (i+1)).innerHTML = 'Wind: ' + Number(data.list[i*8].wind.speed ) + ' MPH'
 						document.querySelector('#humidity' + (i+1)).innerHTML = 'Humidity: ' + Number(data.list[i*8].main.humidity).toFixed(1) + ' %'
-						document.querySelector('#weather-img' + (i+1)).src="http://openweathermap.org/img/wn/" + data.list[i*8].weather[0].icon + ".png"
-						
+						document.querySelector('#weather-img' + (i+1)).src="http://openweathermap.org/img/wn/" + data.list[i*8].weather[0].icon + ".png"				
 						
 					}
 				});
@@ -81,12 +91,8 @@ var getDataByCityName = function (name) {
 				alert('Error:');
 			}
 		})
-		// .then((data) =>{
-			
-		// })
-		.catch(function (error) {
-      //check this later
-			//alert('Unable to connect to OpenWeather');
+		.catch(function (error) {      
+			alert('Unable to connect to OpenWeather');
     });
 };
 
