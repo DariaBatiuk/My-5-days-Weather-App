@@ -14,7 +14,9 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
-Link to the deployed project:
+# Mock up
+![image](https://user-images.githubusercontent.com/83068010/210160466-6a5f40b7-4fd5-4562-a5db-a72f02189d6b.png)
+
+# Link to the deployed project:
 https://dariabatiuk.github.io/My-5-days-Weather-App/
 
-API key 1151aaa47b533c1e5a2b281eebc6f2a6
