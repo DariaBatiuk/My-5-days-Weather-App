@@ -15,12 +15,12 @@
 header {
   margin-bottom: 10px;
   padding: 5px;
-	padding-right: 220px;
+  padding-right: 220px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: end;
-	background: linear-gradient(45deg, #6daedc, #1f0660);
+  background: linear-gradient(45deg, #6daedc, #1f0660);
   /* background-color: rgb(38, 0, 128); */
 }
 
@@ -44,10 +44,11 @@ hr {
 input {
   height: 30px;
   border-radius: 5px;
-	padding-left: 15px;
+  padding-left: 15px;
   /* box-shadow: 5px 5px 5px var(--shadow-border); */
   border: 2px solid var(--shadow-border);
   font-weight: 600;
+  /* text-transform: capitalize; */
 }
 button {
   height: 30px;
@@ -61,14 +62,14 @@ button {
   color: #fff;
 }
 
-#search_city button{
+#search_city button {
   width: 100%;
   margin-bottom: 5px;
   background-color: rgba(196, 192, 192, 0.945);
   box-shadow: 5px 5px 5px var(--shadow-border);
   border: 1px solid var(--shadow-border);
   font-weight: 600;
-	text-transform: capitalize;
+  text-transform: capitalize;
 }
 #main-card {
   box-shadow: 5px 5px 5px var(--shadow-border);
@@ -99,14 +100,14 @@ button {
 #main-card {
   margin-bottom: 10px;
   width: 87%;
-  height:260px;
+  height: 260px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.weather-display {
-  display: grid;
-  grid-template-rows: 40% 10% 45%;
+#weather-display {
+  display: none;
+  grid-template-rows: 55% 10% 45%;
 }
 
 .five-day {
@@ -227,7 +228,13 @@ aside {
 #city-name,
 #todays-date {
   box-shadow: none;
-	text-transform: capitalize;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 1700px){
+	#weather-display {
+		grid-template-rows: 60% 10% 45%;
+	}
 }
 
 @media screen and (max-width: 960px) {
@@ -239,4 +246,37 @@ aside {
     width: 87%;
     margin: auto auto 1rem auto;
   }
+	#weather-display {
+		grid-template-rows: 45% 10% 45%;
+	}
+	#container-daily-cards {
+		display: grid;
+		grid-template-columns: 25% 25% 25%;
+		row-gap: 5%;
+	}
+}
+@media screen and (max-width: 590px){
+	header{
+		padding-right: 0;
+		justify-content: center;
+	}
+	h1{
+		font-size: 25px;
+	}
+	#weather-display {
+		grid-template-rows: 35% 7% 45%;
+	}
+	#container-daily-cards {
+		display: grid;
+		grid-template-columns: 45% 45%;
+	}
+}
+@media screen and (max-width: 390px){
+	#weather-display {
+		grid-template-rows: 25% 5% 40%;
+	}
+	#container-daily-cards {
+		display: grid;
+		grid-template-columns: 60%;
+	}
 }

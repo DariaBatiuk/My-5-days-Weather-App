@@ -4,6 +4,7 @@ let searchBTn = document.querySelector('#search-btn');
 let newCity = document.querySelector('#city-name');
 let searchCity = document.querySelector('#search_city');
 let city_btn = document.querySelector('#city_btn');
+let weatherBlock = document.querySelector('#weather-display');
 let apiKey = '1151aaa47b533c1e5a2b281eebc6f2a6';
 
 
@@ -55,9 +56,12 @@ function saveCityName (cityNameValue) {
 }
 
 //click on search button
-searchBTn.addEventListener("click", () => {
+searchBTn.addEventListener("click", (event) => {
+	event.preventDefault();
 	let cityNameValue = cityName.value.trim().toLowerCase();
     console.log(cityNameValue);
+
+		weatherBlock.style.display = "grid";
 		
 		if (cityNameValue) {
 			getDataByCityName(cityNameValue);
