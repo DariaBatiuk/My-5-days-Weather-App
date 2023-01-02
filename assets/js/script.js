@@ -87,7 +87,7 @@ var getDataByCityName = function (name) {
 						document.querySelector('#max' + (i+1)).innerHTML = 'Temp: ' + Number(data.list[i*8].main.temp - 273.15).toFixed(1) + ' °C'
 						document.querySelector('#wind' + (i+1)).innerHTML = 'Wind: ' + Number(data.list[i*8].wind.speed ) + ' MPH'
 						document.querySelector('#humidity' + (i+1)).innerHTML = 'Humidity: ' + Number(data.list[i*8].main.humidity).toFixed(1) + ' %'
-						document.querySelector('#weather-img' + (i+1)).src="http://openweathermap.org/img/wn/" + data.list[i*8].weather[0].icon + ".png"				
+						document.querySelector('#weather-img' + (i+1)).src="https://openweathermap.org/img/wn/" + data.list[i*8].weather[0].icon + ".png"				
 						
 					}
 				});
@@ -109,7 +109,7 @@ var getCurrentData = function (name) {
 			response.json().then(function (data){
 				console.log(data);
 				document.querySelector('#todays-date').innerHTML = dayjs.unix(data.dt).format('MM-DD-YYYY');
-				document.querySelector('#today-img').src="http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png"
+				document.querySelector('#today-img').src="https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png"
 				document.querySelector('#today-max').innerHTML = 'Temp: ' +  Number(data.main.temp - 273.15).toFixed(1) + ' °C'
 				document.querySelector('#today-wind').innerHTML = 'Wind: ' + Number(data.wind.speed ) + ' MPH'
 				document.querySelector('#today-humidity').innerHTML = 'Humidity: ' + Number(data.main.humidity).toFixed(1) + ' %'				
