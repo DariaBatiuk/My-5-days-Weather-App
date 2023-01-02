@@ -74,7 +74,7 @@ searchBTn.addEventListener("click", (event) => {
 })
 
 var getDataByCityName = function (name) {
-  var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + name + '&appid=1151aaa47b533c1e5a2b281eebc6f2a6';
+  var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + name + '&appid=1151aaa47b533c1e5a2b281eebc6f2a6';
 
   fetch(apiUrl)
 		.then(function (response){
